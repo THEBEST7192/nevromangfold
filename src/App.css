@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0.7rem;
   text-align: center;
 }
 
@@ -12,12 +12,9 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -39,4 +36,29 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.blue-vector {
+  position: absolute;
+  bottom: 10vh;
+  left: 2%;
+  width: 30%;
+  height: auto;
+  z-index: -1;
+}
+
+.yellow-vector {
+  position: absolute;
+  top: 80vh;
+  right: 0%;
+  width: 25%;
+  height: auto;
+  z-index: -1;
 }
