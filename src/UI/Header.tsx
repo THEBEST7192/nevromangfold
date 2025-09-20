@@ -29,6 +29,7 @@ const Header: React.FC = () => {
   const logoSectionRef = useRef<HTMLDivElement>(null);
   const userSectionRef = useRef<HTMLDivElement>(null);
   const itemWidths = useRef<number[]>([]);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const debounce = (func: () => void, delay: number) => {
     let timer: number | null = null;
@@ -128,6 +129,18 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('resize', debouncedUpdate);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen && dropdownRef.current && !dropdownRef.current.contains(event.target as Node) && !burgerMenuRef.current?.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+  
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -160,7 +173,7 @@ const Header: React.FC = () => {
             <img src={isOpen ? closeIcon : menuIcon} alt="Menu" className="burger-icon" />
           </div>
           {hiddenItems.length > 0 && (
-            <div className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
+            <div className={`dropdown-menu ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
               {hiddenItems.map((item, index) => (
                 <a key={index} href={item.href} className="dropdown-item">
                   {item.name}
