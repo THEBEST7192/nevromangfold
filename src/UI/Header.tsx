@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Header.css';
 import logo from "../assets/logo.png";
 import loginIcon from "../assets/login.svg";
-import menuIcon from "/public/assets/UI/menu.svg";
-import closeIcon from "/public/assets/UI/close.svg";
+import menuIcon from "../../src/assets/UI/menu.svg";
+import closeIcon from "../../src/assets/UI/close.svg";
 
 interface NavItem {
   name: string;
