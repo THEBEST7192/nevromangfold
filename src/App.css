@@ -47,18 +47,33 @@
 
 .blue-vector {
   position: absolute;
-  bottom: 10vh;
+  top: auto;
+  bottom: 20vh;
   left: 2%;
   width: 30%;
+  max-width: 300px;
   height: auto;
+  max-height: 300px;
   z-index: -1;
+  pointer-events: none;
 }
 
 .yellow-vector {
   position: absolute;
-  top: 80vh;
-  right: 0%;
+  top: auto;
+  bottom: 10vh;
+  right: -5%;
   width: 25%;
+  max-width: 250px;
   height: auto;
+  max-height: 250px;
   z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .blue-vector,
+  .yellow-vector {
+    display: none;
+  }
 }

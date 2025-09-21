@@ -11,8 +11,8 @@ function App() {
     <div className="app-container">
       <Header />
       <MainPage />
-      <img src={blueVector} alt="Blue Vector" className="blue-vector" />
-      <img src={yellowVector} alt="Yellow Vector" className="yellow-vector" />
+      {/* <img src={blueVector} alt="Blue Vector" className="blue-vector" /> */}
+      {/* <img src={yellowVector} alt="Yellow Vector" className="yellow-vector" /> */}
     </div>
   )
 }
