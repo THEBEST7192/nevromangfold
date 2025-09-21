@@ -189,4 +189,26 @@
     display: flex;
     margin-left: 15px;
   }
+
+  .login-button span,
+  .language-switcher span {
+    display: none;
+  }
+
+  .login-button,
+  .language-switcher {
+    padding: 0;
+    background-color: transparent;
+    justify-content: center; 
+    align-items: center; 
+    width: 48px; 
+    height: 48px; 
+  }
+
+  .login-icon,
+  .flag-icon {
+    height: 32px; 
+    width: 32px; 
+    margin-right: 0; 
+  }
 }
