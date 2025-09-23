@@ -27,12 +27,22 @@
 .logo {
   height: 40px;
   margin-right: 5px;
+  transition: all 0.3s ease;
 }
 
 .logo-text {
   font-size: 24px;
   font-weight: bold;
   padding-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.logo-text:hover {
+  color: #007bff;
+}
+
+.logo-text:active {
+  color: #0056b3;
 }
 
 .navigation ul {
@@ -51,6 +61,11 @@
   text-decoration: none;
   font-size: 19px;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #007bff;
 }
 
 .user-section {
@@ -69,6 +84,15 @@
   margin-right: 15px;
   font-size: 19px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #d0d0d0;
+}
+
+.login-button:active {
+  background-color: #c0c0c0;
 }
 
 .login-icon {
@@ -85,8 +109,16 @@
   cursor: pointer;
   font-size: 19px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+.language-switcher:hover {
+  background-color: #d0d0d0;
+}
+
+.language-switcher:active {
+  background-color: #c0c0c0;
+}
 .flag-icon {
   height: 20px;
   margin-right: 8px;
