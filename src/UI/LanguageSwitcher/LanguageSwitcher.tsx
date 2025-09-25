@@ -49,7 +49,7 @@ const LanguageSwitcher: React.FC = () => {
       <div className="language-switcher-toggle" onClick={toggleDropdown}>
         {currentLanguage && <img src={currentLanguage.flag} alt={currentLanguage.name} className="flag-icon" />}
         <span>{selectedLanguage.charAt(0).toUpperCase() + selectedLanguage.slice(1)}</span>
-        <div className="dropdown-arrow"></div>
+        <div className={`dropdown-arrow ${isOpen ? 'open' : ''}`}></div>
       </div>
       <div className={`language-switcher-dropdown-menu ${isOpen ? 'open' : 'closed'}`}>
         {languages.map((lang) => (

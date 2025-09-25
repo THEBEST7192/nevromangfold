@@ -27,6 +27,11 @@
   border-right: 5px solid transparent;
   border-top: 5px solid black;
   margin-left: 5px;
+  transition: transform 0.3s ease; 
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg); 
 }
 
 .burger-menu {
