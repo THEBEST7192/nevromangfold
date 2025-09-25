@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import loginIcon from "../assets/login.svg";
 import menuIcon from "../../src/assets/UI/menu.svg";
 import closeIcon from "../../src/assets/UI/close.svg";
+import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher';
 
 interface NavItem {
   name: string;
@@ -164,16 +165,12 @@ const Header: React.FC = () => {
             <img src={loginIcon} alt="Login" className="login-icon" />
             <span>Logg Inn</span>
           </div>
-          <div className="language-switcher">
-            <img src="/src/assets/languageswitcher/norwegian-flag.png" alt="Norwegian Flag" className="flag-icon" />
-            <span>Norsk</span>
-            <span className="dropdown-arrow"></span>
-          </div>
+          <LanguageSwitcher />
           <div className="burger-menu" style={{display: showBurger ? 'flex' : 'none'}} onClick={toggleMenu} ref={burgerMenuRef}>
             <img src={isOpen ? closeIcon : menuIcon} alt="Menu" className="burger-icon" />
           </div>
           {hiddenItems.length > 0 && (
-            <div className={`dropdown-menu ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
+            <div className={`burger-dropdown-menu ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
               {hiddenItems.map((item, index) => (
                 <a key={index} href={item.href} className="dropdown-item">
                   {item.name}
