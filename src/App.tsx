@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './UI/Header'
 import MainPage from './MainPage'
+import DonationButton from './DonationButton' 
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <div className="app-container">
       <Header />
       <MainPage />
+      <DonationButton /> 
     </div>
   )
 }
