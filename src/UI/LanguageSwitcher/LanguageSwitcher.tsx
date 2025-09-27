@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './LanguageSwitcher.css';
+import norwegianFlag from '../../assets/LanguageSwitcher/norwegian-flag.png';
+import ukFlag from '../../assets/LanguageSwitcher/uk-flag.png';
+import greekFlag from '../../assets/LanguageSwitcher/greek-flag.png';
+import frenchFlag from '../../assets/LanguageSwitcher/french-flag.png';
 
 const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,10 +11,10 @@ const LanguageSwitcher: React.FC = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const languageFlags: { [key: string]: string } = {
-    norwegian: '/src/assets/LanguageSwitcher/norwegian-flag.png',
-    english: '/src/assets/LanguageSwitcher/uk-flag.png',
-    greek: '/src/assets/LanguageSwitcher/greek-flag.png',
-    french: '/src/assets/LanguageSwitcher/french-flag.png',
+    norwegian: norwegianFlag,
+    english: ukFlag,
+    greek: greekFlag,
+    french: frenchFlag,
   };
 
   const languages = Object.keys(languageFlags).map(lang => ({
