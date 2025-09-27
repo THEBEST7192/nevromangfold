@@ -22,6 +22,59 @@
   position: relative;
 }
 
+.text-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  color: white; 
+}
+
+.cta-button.about {
+  background-color: #FF6F61; 
+}
+
+.cta-button.about:hover {
+  background-color: #E05A50;
+}
+
+.cta-button.volunteer {
+  background-color: #4CAF50; 
+}
+
+.cta-button.volunteer:hover {
+  background-color: #45A049;
+}
+
+.cta-button.donate {
+  background-color: #2196F3; 
+}
+
+.cta-button.donate:hover {
+  background-color: #1976D2;
+}
+
 .image-section {
   flex: 1;
   text-align: center;
@@ -66,6 +119,37 @@
   height: 250px;
   z-index: -1;
   pointer-events: none;
+}
+
+/* Show desktop CTAs below text, hide mobile CTAs */
+.cta-desktop { display: flex; }
+.cta-mobile { display: none; }
+
+/* Keep vectors visible by adjusting positions for mid screens */
+@media (max-width: 1250px) {
+  .main-page-content {
+    align-items: stretch;
+  }
+  .cta-desktop { display: none; }
+  .cta-mobile { display: flex; gap: 15px; margin: 16px 0; justify-content: center; }
+  .image-section {
+    padding-top: 10px;
+  }
+  .yellow-vector {
+    bottom: -160px; 
+  }
+  .blue-vector {
+    bottom: -80px; 
+  }
+}
+
+@media (max-width: 896px) {
+  .yellow-vector {
+    bottom: -100px;
+  }
+  .blue-vector {
+    bottom: -50px;
+  }
 }
 
 @media (max-width: 768px) {

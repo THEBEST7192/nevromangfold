@@ -47,7 +47,7 @@ const Header: React.FC = () => {
     const headerWidth = headerContentRef.current.clientWidth;
     const logoWidth = logoSectionRef.current ? logoSectionRef.current.clientWidth : 0;
     const userWidth = userSectionRef.current ? userSectionRef.current.clientWidth : 0;
-    const margins = 40; // assumed total margins
+    const margins = 40; 
 
     const isMobile = window.innerWidth <= 768;
 
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
     let maxCount = 0;
 
     for (let i = 0; i < NAV_ITEMS.length; i++) {
-      const itemWidth = itemWidths.current[i] + 20; // add margin-right
+      const itemWidth = itemWidths.current[i] + 20; 
       if (cumulative + itemWidth <= available) {
         cumulative += itemWidth;
         maxCount++;
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
       setHiddenItems([]);
       setShowBurger(false);
     } else {
-      const burgerWidth = 50; // assumed burger width
+      const burgerWidth = 50; 
       available = headerWidth - logoWidth - userWidth - burgerWidth - margins;
 
       cumulative = 0;
