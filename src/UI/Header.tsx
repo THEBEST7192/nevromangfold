@@ -151,8 +151,10 @@ const Header: React.FC = () => {
     <header className="header-desktop">
       <div className="header-content" ref={headerContentRef}>
         <div className="logo-section" ref={logoSectionRef}>
-          <img src={logo} className="logo" alt="Nevromangfold logo" />
-          <span className="logo-text">Nevromangfold</span>
+          <Link to="/">
+            <img src={logo} className="logo" alt="Nevromangfold logo" />
+            <span className="logo-text">Nevromangfold</span>
+          </Link>
         </div>
         <nav className="navigation">
           <ul className={`main-nav ${isOpen ? 'open' : ''}`} ref={navRef}>

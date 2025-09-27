@@ -24,6 +24,13 @@
   margin-left: -10px;
 }
 
+.logo-section a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo {
   height: 40px;
   margin-right: 5px;
