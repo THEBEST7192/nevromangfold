@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './LanguageSwitcher.css';
-import norwegianFlag from '../../assets/LanguageSwitcher/norwegian-flag.png';
-import ukFlag from '../../assets/LanguageSwitcher/uk-flag.png';
-import greekFlag from '../../assets/LanguageSwitcher/greek-flag.png';
-import frenchFlag from '../../assets/LanguageSwitcher/french-flag.png';
+import norwegianFlag from '/assets/LanguageSwitcher/norwegian-flag.png';
+import ukFlag from '/assets/LanguageSwitcher/uk-flag.png';
+import greekFlag from '/assets/LanguageSwitcher/greek-flag.png';
+import frenchFlag from '/assets/LanguageSwitcher/french-flag.png';
 
 const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
