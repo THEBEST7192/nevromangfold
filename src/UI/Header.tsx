@@ -5,6 +5,7 @@ import loginIcon from "../assets/login.svg";
 import menuIcon from "../../src/assets/UI/menu.svg";
 import closeIcon from "../../src/assets/UI/close.svg";
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher';
+import { Link } from 'react-router-dom';
 
 interface NavItem {
   name: string;
@@ -12,11 +13,11 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { name: 'Bli Medlem!', href: '#' },
-  { name: 'Kontakt Oss', href: '#' },
-  { name: 'Styret', href: '#' },
-  { name: 'Innlegg', href: '#' },
-  { name: 'Arkiv', href: '#' },
+  { name: 'Hjem', href: '/' },
+  { name: 'Om Oss', href: '/about' },
+  { name: 'Bli Frivillig', href: '/volunteer' },
+  { name: 'Arrangementer', href: '/events' },
+  { name: 'Donasjon', href: '/donate' },
 ];
 
 const Header: React.FC = () => {
@@ -156,7 +157,7 @@ const Header: React.FC = () => {
         <nav className="navigation">
           <ul className={`main-nav ${isOpen ? 'open' : ''}`} ref={navRef}>
             {visibleItems.map((item, index) => (
-              <li key={index}><a href={item.href}>{item.name}</a></li>
+              <li key={index}><Link to={item.href}>{item.name}</Link></li>
             ))}
           </ul>
         </nav>
@@ -172,9 +173,9 @@ const Header: React.FC = () => {
           {hiddenItems.length > 0 && (
             <div className={`burger-dropdown-menu ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
               {hiddenItems.map((item, index) => (
-                <a key={index} href={item.href} className="dropdown-item">
+                <Link key={index} to={item.href} className="dropdown-item">
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           )}

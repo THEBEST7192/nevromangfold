@@ -22,7 +22,7 @@ const MainPage: React.FC = () => {
           <img src={blueVector} alt="Blue Vector" className="blue-vector" />
         </div>
         <div className="image-section">
-          <img src={mainPageImage} alt="Natüürmort triikrauga" className="main-image" />
+          <img src={mainPageImage} alt="Autistic Image" className="main-image" />
           <p className="image-title">Title: Natüürmort triikrauga Creator: Vahtra, Jaan (autor) Date: 1923 Providing institution: Tartu Art Museum Aggregator</p>
           <img src={yellowVector} alt="Yellow Vector" className="yellow-vector" />
         </div>
