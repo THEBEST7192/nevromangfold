@@ -85,22 +85,26 @@
 .login-button {
   display: flex;
   align-items: center;
-  background-color: #e0e0e0;
+  background-color: transparent; 
   padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 15px;
   font-size: 19px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease; 
 }
 
 .login-button:hover {
-  background-color: #d0d0d0;
+  color: #007bff; 
 }
 
 .login-button:active {
-  background-color: #c0c0c0;
+  color: #0056b3; 
+}
+
+.login-button span:hover {
+  color: #007bff; 
 }
 
 .login-icon {
@@ -186,27 +190,4 @@
   .yellow-vector {
     display: none;
   }
-
-  .login-button:hover,
-  .login-button:active,
-  .language-switcher:hover,
-  .language-switcher:active {
-    background-color: transparent !important; 
-  }
-}
-
-.header {
-  height: 40px; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px; 
-  background-color: #fff;
-  color: #333;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  height: 40px; 
-  position: relative;
-  font-family: 'Roboto', sans-serif; 
-  font-weight: bold; 
 }
