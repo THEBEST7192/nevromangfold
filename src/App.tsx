@@ -4,7 +4,7 @@ import MainPage from './pages/Main/MainPage'
 import DonationButton from './DonationButton'
 import AboutUsPage from './pages/AboutUs/AboutUsPage';
 import VolunteerPage from './pages/Volunteer/VolunteerPage';
-import EventsPage from './EventsPage';
+import EventsPage from './pages/Events/EventsPage';
 import DonationPage from './DonationPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 

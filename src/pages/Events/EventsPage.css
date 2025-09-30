@@ -1,0 +1,174 @@
+.events-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.events-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.events-intro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.events-list h2,
+.calendar-section h2,
+.past-events h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #4a86e8;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 3rem;
+}
+
+.event-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-header {
+  padding: 1rem;
+  position: relative;
+}
+
+.event-type {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.webinar .event-header {
+  background-color: #e3f2fd;
+}
+
+.webinar .event-type {
+  background-color: #2196f3;
+  color: white;
+}
+
+.conference .event-header {
+  background-color: #f3e5f5;
+}
+
+.conference .event-type {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.meeting .event-header {
+  background-color: #e8f5e9;
+}
+
+.meeting .event-type {
+  background-color: #4caf50;
+  color: white;
+}
+
+.workshop .event-header {
+  background-color: #fff3e0;
+}
+
+.workshop .event-type {
+  background-color: #ff9800;
+  color: white;
+}
+
+.event-header h3 {
+  margin: 0;
+  padding-right: 80px;
+  font-size: 1.3rem;
+}
+
+.event-details {
+  padding: 1rem;
+}
+
+.event-date,
+.event-time,
+.event-location {
+  margin-bottom: 0.5rem;
+}
+
+.event-description {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.register-button,
+.calendar-button,
+.youtube-button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #4a86e8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.register-button:hover,
+.calendar-button:hover,
+.youtube-button:hover {
+  background-color: #3a76d8;
+  transform: translateY(-5px);
+  color: white;
+}
+
+.calendar-section,
+.past-events {
+  margin-bottom: 3rem;
+}
+
+.calendar-button,
+.youtube-button {
+  max-width: 300px;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+}
+
+.events-container h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.events-container p {
+  color: #666;
+  line-height: 1.6;
+}
