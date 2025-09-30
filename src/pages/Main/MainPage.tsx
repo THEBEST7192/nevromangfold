@@ -1,8 +1,8 @@
 import React from 'react';
-import './MainPage.css';
-import mainPageImage from "./assets/mainpage.jpg";
-import blueVector from "./assets/blue.svg";
-import yellowVector from "./assets/yellow.svg";
+import "./MainPage.css";
+import mainPageImage from "../../assets/mainpage.jpg";
+import blueVector from "../../assets/blue.svg";
+import yellowVector from "../../assets/yellow.svg";
 import { Link } from 'react-router-dom';
 
 const MainPage: React.FC = () => {

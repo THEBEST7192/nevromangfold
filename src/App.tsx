@@ -1,9 +1,9 @@
 import './App.css'
 import Header from './UI/Header'
-import MainPage from './MainPage'
+import MainPage from './pages/Main/MainPage'
 import DonationButton from './DonationButton'
-import AboutUsPage from './AboutUsPage';
-import VolunteerPage from './VolunteerPage';
+import AboutUsPage from './pages/AboutUs/AboutUsPage';
+import VolunteerPage from './pages/Volunteer/VolunteerPage';
 import EventsPage from './EventsPage';
 import DonationPage from './DonationPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
