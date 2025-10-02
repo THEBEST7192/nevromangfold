@@ -6,6 +6,7 @@ import AboutUsPage from './pages/AboutUs/AboutUsPage';
 import VolunteerPage from './pages/Volunteer/VolunteerPage';
 import EventsPage from './pages/Events/EventsPage';
 import DonationPage from './DonationPage';
+import Footer from './UI/Footer/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/donate" element={<DonationPage />} />
         </Routes>
         <DonationButton />
+        <Footer />
       </div>
     </Router>
   )
