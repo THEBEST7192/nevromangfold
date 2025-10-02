@@ -147,7 +147,6 @@
 .calendar-button:hover,
 .youtube-button:hover {
   background-color: #3a76d8;
-  transform: translateY(-5px);
   color: white;
 }
 
