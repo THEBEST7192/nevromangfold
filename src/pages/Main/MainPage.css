@@ -1,6 +1,6 @@
 .main-page-container {
-  padding: 20px 20px;
   position: relative;
+  margin-bottom: 200px;
 }
 
 .main-page-content {
@@ -145,7 +145,7 @@
 
 @media (max-width: 896px) {
   .yellow-vector {
-    bottom: -100px;
+    bottom: -170px;
   }
   .blue-vector {
     bottom: -50px;
