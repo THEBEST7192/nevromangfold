@@ -1,5 +1,5 @@
 import './App.css'
-import Header from './UI/Header'
+import Header from './UI/Header/Header';
 import MainPage from './pages/Main/MainPage'
 import DonationButton from './pages/Donation/DonationButton'
 import AboutUsPage from './pages/AboutUs/AboutUsPage';
