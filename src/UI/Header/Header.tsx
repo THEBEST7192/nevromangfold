@@ -164,10 +164,10 @@ const Header: React.FC = () => {
           </ul>
         </nav>
         <div className="user-section" ref={userSectionRef}>
-          <div className="login-button">
+          <Link to="/login" className="login-button">
             <img src={loginIcon} alt="Login" className="login-icon" />
             <span>Logg Inn</span>
-          </div>
+          </Link>
           <LanguageSwitcher />
           <div className="burger-menu" style={{display: showBurger ? 'flex' : 'none'}} onClick={toggleMenu} ref={burgerMenuRef}>
             <img src={isOpen ? closeIcon : menuIcon} alt="Menu" className="burger-icon" />

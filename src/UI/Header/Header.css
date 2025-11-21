@@ -91,7 +91,13 @@
   margin-right: 15px;
   font-size: 19px;
   font-weight: bold;
+  color: black;
   transition: color 0.3s ease; 
+}
+
+.login-button:link,
+.login-button:visited {
+  color: black;
 }
 
 .login-button:hover {
