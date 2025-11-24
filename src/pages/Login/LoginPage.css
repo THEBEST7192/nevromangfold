@@ -1,5 +1,4 @@
 .auth-page {
-  background: linear-gradient(135deg, rgba(74, 134, 232, 0.15), rgba(255, 215, 141, 0.15));
   min-height: calc(100vh - 140px);
   display: flex;
   justify-content: center;

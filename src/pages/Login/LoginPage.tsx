@@ -10,10 +10,16 @@ const LoginPage: React.FC = () => {
     password: '',
   });
   const [registerData, setRegisterData] = useState({
+    username: '',
     name: '',
     email: '',
     password: '',
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
 
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -25,12 +31,64 @@ const LoginPage: React.FC = () => {
     setRegisterData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (mode === 'login') {
-      console.log('Login attempt', loginData);
-    } else {
-      console.log('Register attempt', registerData);
+    setError(null);
+    setSuccess(null);
+    setLoading(true);
+
+    try {
+      if (mode === 'login') {
+        const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(loginData),
+        });
+
+        const data = await res.json().catch(() => null);
+
+        if (!res.ok) {
+          if (data && data.error === 'invalid_credentials') {
+            setError('Feil e-post eller passord.');
+          } else {
+            setError('Kunne ikke logge inn. Prøv igjen senere.');
+          }
+          return;
+        }
+
+        setSuccess('Du er nå logget inn.');
+        console.log('Login success', data);
+      } else {
+        const res = await fetch(`${API_BASE_URL}/api/auth/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(registerData),
+        });
+
+        const data = await res.json().catch(() => null);
+
+        if (!res.ok) {
+          if (data && data.error === 'user_exists') {
+            setError('En bruker med denne e-posten finnes allerede.');
+          } else if (data && data.error === 'username_taken') {
+            setError('Brukernavnet er opptatt. Velg et annet.');
+          } else if (data && data.error === 'invalid_username') {
+            setError('Brukernavn må være 3-15 tegn og kan kun inneholde bokstaver, tall eller _.');
+          } else if (data && data.error === 'missing_fields') {
+            setError('Fyll ut alle felt.');
+          } else {
+            setError('Kunne ikke opprette konto. Prøv igjen senere.');
+          }
+          return;
+        }
+
+        setSuccess('Kontoen din er opprettet. Du kan nå logge inn.');
+        console.log('Register success', data);
+      }
+    } catch (err) {
+      setError('Uventet feil. Sjekk tilkoblingen og prøv igjen.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -65,7 +123,12 @@ const LoginPage: React.FC = () => {
               required
             />
 
-            <button type="submit" className="primary-btn">Logg inn</button>
+            {error && <div className="auth-message error">{error}</div>}
+            {success && <div className="auth-message success">{success}</div>}
+
+            <button type="submit" className="primary-btn" disabled={loading}>
+              {loading ? 'Logger inn...' : 'Logg inn'}
+            </button>
 
             <button
               type="button"
@@ -79,6 +142,17 @@ const LoginPage: React.FC = () => {
           <form className="auth-form" onSubmit={handleSubmit}>
             <h1>Bli med i fellesskapet</h1>
             <p className="auth-subtitle">Lag en konto for å delta på arrangementer og holde deg oppdatert.</p>
+
+            <label htmlFor="register-username">Brukernavn</label>
+            <input
+              id="register-username"
+              name="username"
+              type="text"
+              placeholder="Velg brukernavn"
+              value={registerData.username}
+              onChange={handleRegisterChange}
+              required
+            />
 
             <label htmlFor="register-name">Navn</label>
             <input
@@ -113,7 +187,12 @@ const LoginPage: React.FC = () => {
               required
             />
 
-            <button type="submit" className="primary-btn">Opprett konto</button>
+            {error && <div className="auth-message error">{error}</div>}
+            {success && <div className="auth-message success">{success}</div>}
+
+            <button type="submit" className="primary-btn" disabled={loading}>
+              {loading ? 'Oppretter konto...' : 'Opprett konto'}
+            </button>
 
             <button
               type="button"
