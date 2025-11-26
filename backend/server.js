@@ -8,10 +8,19 @@ import { getDbPool } from './db.js';
 const app = express();
 
 const CLIENT_ORIGIN = requireEnv('CLIENT_ORIGIN');
+const ALLOWED_ORIGINS = CLIENT_ORIGIN.split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 const PORT = Number(getEnv('PORT') || 3001);
 
 app.use(cors({
-  origin: CLIENT_ORIGIN,
+  origin: (origin, callback) => {
+    if (!origin || ALLOWED_ORIGINS.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
 }));
 app.use(express.json({ limit: '1mb' }));
 

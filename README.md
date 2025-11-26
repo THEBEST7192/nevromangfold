@@ -40,11 +40,13 @@ Sett `CLIENT_ORIGIN` til den faktiske frontend-adressen og `VITE_API_BASE_URL` t
 | Standard (Render backend) | `http://localhost:5173` | `http://localhost:5173` | `http://localhost:3001` |
 | Egendefinert frontend | `http://localhost:6767` | `http://localhost:6767` | `http://localhost:3001` (eller den porten Express kjører på) |
 
+Hvis backend skal tillate flere domener samtidig (f.eks. Vercel-produksjon + lokal utvikling), sett `CLIENT_ORIGIN` som en kommaseparert liste: `CLIENT_ORIGIN=https://nevromangfold.vercel.app,https://nevromangfold.onrender.com,http://localhost:5173`.
+
 ### Unike miljøvariabler
 
 De fleste verdiene i `.env.example` er klassiske `DB_*`-felt. Disse variablene skiller seg ut og styrer integrasjonen mellom frontend, backend og Cloudflare Access:
 
-- **CLIENT_ORIGIN** – adresse som tillates i CORS-konfigurasjonen. Bør alltid samsvare med faktisk frontend-URL (lokalt f.eks. `http://localhost:5173`, i produksjon `https://nevromangfold.vercel.app`).
+- **CLIENT_ORIGIN** – én eller flere adresser som tillates i CORS-konfigurasjonen. Verdien kan være en kommaseparert liste (f.eks. `https://nevromangfold.vercel.app,http://localhost:5173`).
 - **VITE_API_BASE_URL** – baseadresse for API-kall i frontend. Typisk `http://localhost:3001` under lokal kjøring med `npm run server`, og tom streng i produksjon slik at forespørsler går mot samme domene (`/api/*`).
 - **CF_ACCESS_* / DB_TUNNEL_PORT** – styrer Cloudflare Zero Trust-tunnelen. Når både `CF_ACCESS_CLIENT_ID` og `CF_ACCESS_CLIENT_SECRET` er satt, startes `cloudflared access tcp` automatisk og MariaDB-trafikk sendes via `localhost:<DB_TUNNEL_PORT>` (standard 53306).
 
